@@ -136,6 +136,16 @@ These do not actually need to be solved, but are sort of general Mono design iss
 
 My repro steps are ad hoc and are mostly shaped by a desire to not ever have to run `make install`. But:
 
+EDIT: General setup steps for mac
+
+    # install mono using the installer from the mono website.
+    brew install emscripten # this pulls in node also
+    brew install cmake
+    brew install autoconf
+    brew install automake
+    brew install libtool
+    brew install ccache
+
 Install emscripten and node.js (I suggest doing this via Homebrew). Check out this repository and cd to it. In a terminal run the following steps:
 
     # Check out my emscripten prototype branch; we'll build the aot compiler in this directory.
