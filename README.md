@@ -139,14 +139,21 @@ My repro steps are ad hoc and are mostly shaped by a desire to not ever have to 
 EDIT: General setup steps for mac
 
     # install mono using the installer from the mono website.
-    brew install emscripten # this pulls in node also
+    brew install node
     brew install cmake
     brew install autoconf
     brew install automake
     brew install libtool
     brew install ccache
+    # we could install emscripten using brew but it doesn't actually work.
+    git clone https://github.com/juj/emsdk.git
+    cd emsdk
+    ./emsdk install sdk-incoming-64bit binaryen-master-64bit
+    ./emsdk activate sdk-incoming-64bit binaryen-master-64bit
+    # i think you'll need to do this in every shell session if you need to access emscripten.
+    source ./emsdk_env.sh
 
-Install emscripten and node.js (I suggest doing this via Homebrew). Check out this repository and cd to it. In a terminal run the following steps:
+Check out this repository and cd to it. In a terminal run the following steps:
 
     # Check out my emscripten prototype branch; we'll build the aot compiler in this directory.
     git clone --single-branch -b ems_test git@github.com:xmcclure/mono.git mono_compile
