@@ -174,7 +174,7 @@ Check out this repository and cd to it. In a terminal run the following steps:
 
     # Build compiler. Also build a mobile_static corlib and disable ALWAYS_AOT.
     cd mono_compile
-    ./autogen.sh --enable-nls=no "CFLAGS=-O0" CC="ccache clang" --disable-boehm --with-sigaltstack=no --prefix=`pwd`/../mono_compile_install --enable-maintainer-mode --enable-llvm --enable-llvm-runtime --with-llvm=`pwd`/../mono_llvm
+    ./autogen.sh --enable-nls=no "CFLAGS=-O0" CC="ccache clang" --disable-boehm --with-sigaltstack=no --prefix=`pwd`/../mono_compile_install --enable-maintainer-mode --enable-llvm --enable-llvm-runtime --with-llvm=`pwd`/../mono_llvm --disable-btls
     make -j8
     (cd mcs/class/corlib && make PROFILE=mobile_static ALWAYS_AOT=)
     cd ..
