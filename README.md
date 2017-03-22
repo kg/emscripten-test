@@ -153,14 +153,17 @@ EDIT: General setup steps for mac
     # i think you'll need to do this in every shell session if you need to access emscripten.
     source ./emsdk_env.sh
 
-Check out this repository and cd to it. In a terminal run the following steps:
+Build steps
 
+    git clone https://github.com/kg/emscripten-test.git
+    cd emscripten-test
+    
     # Check out my emscripten prototype branch; we'll build the aot compiler in this directory.
-    git clone --single-branch -b ems_test git@github.com:xmcclure/mono.git mono_compile
+    git clone --single-branch -b ems_test https://github.com/xmcclure/mono mono_compile
     (cd mono_compile && git reset --hard c8b6aa0503a57ce01c750695728b28b6a6f3d4df)
 
     # Check out a second copy to build the runtime in.
-    git clone --single-branch -b ems_test git@github.com:xmcclure/mono.git mono_runtime
+    git clone --single-branch -b ems_test https://github.com/xmcclure/mono mono_runtime
     (cd mono_runtime && git reset --hard c8b6aa0503a57ce01c750695728b28b6a6f3d4df)
 
     # Check out mono's llvm fork. We'll need this to do anything.
